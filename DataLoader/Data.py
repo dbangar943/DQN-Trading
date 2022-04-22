@@ -85,16 +85,16 @@ class Data:
 
         #Store mean prices
         p3 = self.close_price[reward_index_first:reward_index_last]
-        print(p3)
+        #print(p3)
 
         reward = 0
         if action == 0 or (action == 1 and self.own_share):  # Buy Share or Hold Share
             # reward = ((1 - self.trading_cost_ratio) ** 2 * p2 / p1 - 1) * 100  # profit in percent
-            reward = ((1 - self.trading_cost_ratio) ** 2 * p1 / p2 - 1) * 100  # profit in percent
+            reward = -1  # profit in percent
         elif action == 2 or (action == 1 and not self.own_share):  # Sell Share or No Share
             # consider the transaction in the reverse order
             # reward = ((1 - self.trading_cost_ratio) ** 2 * p1 / p2 - 1) * 100
-            reward = ((1 - self.trading_cost_ratio) ** 2 * p2 / p1 - 1) * 100
+            reward = 1
 
         return reward
 
