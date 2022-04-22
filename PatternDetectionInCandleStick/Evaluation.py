@@ -131,7 +131,7 @@ class Evaluation:
         # return self.data[f'arithmetic_daily_return_{self.action_label}'].mean() / self.data[
         #     f'arithmetic_daily_return_{self.action_label}'].std()
         rate_of_return = self.get_rate_of_return()
-        return np.mean(rate_of_return) / np.std(rate_of_return)
+        return np.mean(rate_of_return) / np.std(rate_of_return) * np.sqrt(365)
 
     def value_at_risk(self, significance_level=5):
         """
