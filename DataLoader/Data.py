@@ -84,7 +84,7 @@ class Data:
         p2 = self.close_price[reward_index_last]
 
         #Store mean prices
-        p3 = self.close_price[reward_index_first:reward_index_last]
+        #p3 = self.close_price[reward_index_first:reward_index_last]
         #print(p3)
 
         reward = 0
